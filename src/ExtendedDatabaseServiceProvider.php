@@ -2,9 +2,6 @@
 
 namespace Rakshitbharat\ExtendedDatabase;
 
-use Illuminate\Database\Eloquent\Model;
-use Illuminate\Database\Query\Builder;
-use Illuminate\Support\Facades\DB;
 use Illuminate\Support\ServiceProvider;
 
 class ExtendedDatabaseServiceProvider extends ServiceProvider
@@ -14,9 +11,10 @@ class ExtendedDatabaseServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        Model::addGlobalScope('ToCompleteSql', function (Builder $query) {
+        \Illuminate\Database\Eloquent\Builder::macro("toSqlWithBindings", function () {
+            $query = $this;
             try {
-                $query->addSelect(DB::raw('{sql::::::::sql}'))->first();
+                $query->addSelect(\Illuminate\Support\Facades\DB::raw('{sql::::::::sql}'))->first();
             } catch (\Exception $Exception) {
                 $string = $Exception->getMessage();
                 $string = explode('SQL: ', $string)[1];
@@ -26,13 +24,5 @@ class ExtendedDatabaseServiceProvider extends ServiceProvider
                 return $string;
             }
         });
-    }
-
-    /**
-     * Register the application services.
-     */
-    public function register()
-    {
-
     }
 }
