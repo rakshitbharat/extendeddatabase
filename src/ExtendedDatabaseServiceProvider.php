@@ -20,6 +20,7 @@ class ExtendedDatabaseServiceProvider extends ServiceProvider
                 $string = explode('SQL: ', $string)[1];
                 $string = str_replace(' , {sql::::::::sql}', '', $string);
                 $string = str_replace(', {sql::::::::sql}', '', $string);
+                $string = str_replace(' {sql::::::::sql}', '', $string);
                 $string = substr_replace($string, "", -1);
                 return $string;
             }
