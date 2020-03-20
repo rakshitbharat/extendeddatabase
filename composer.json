@@ -1,0 +1,52 @@
+{
+    "name": "rakshitbharat/extendeddatabase",
+    "description": "Extend Power of Laravel's ORM Eloquent with attaching more methods to it.",
+    "keywords": [
+        "rakshitbharat",
+        "extendeddatabase",
+        "laravel",
+        "eloquent",
+        "sql",
+        "debugging"
+    ],
+    "homepage": "https://github.com/rakshitbharat/extendeddatabase",
+    "license": "MIT",
+    "type": "library",
+    "authors": [
+        {
+            "name": "Rakshit Patel",
+            "email": "rakshitbharatproject@gmail.com",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "php": "^7"
+    },
+    "autoload": {
+        "psr-4": {
+            "Rakshitbharat\\ExtendedDatabase\\": "src"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Rakshitbharat\\ExtendedDatabase\\Tests\\": "tests"
+        }
+    },
+    "scripts": {
+        "test": "vendor/bin/phpunit",
+        "test-coverage": "vendor/bin/phpunit --coverage-html coverage"
+    },
+    "config": {
+        "sort-packages": true
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Rakshitbharat\\ExtendedDatabase\\ExtendedDatabaseServiceProvider"
+            ],
+            "aliases": {
+                "ExtendedDatabase": "Rakshitbharat\\ExtendedDatabase\\ExtendedDatabaseFacade"
+            }
+        }
+    }
+}
