@@ -18,7 +18,7 @@ composer require rakshitbharat/extendeddatabase
 ## Usage
 
 ``` php
-echo User::select('*')->where('name','Rakshit')->toCompleteSql();
+echo User::select('*')->where('name','Rakshit')->toSqlWithBindings();
 ```
 Output 
 select * from `users` where `name` = Rakshit
@@ -32,10 +32,6 @@ echo User::select('*')->where('name','something')->paginateToDatatable();
 Excepted output will be more advance pagination options.
 For more information to pass parameters to this object with Request object read below.
 https://datatables.net/manual/server-side
-
-## Contributing
-
-Please see [CONTRIBUTING](CONTRIBUTING.md) for details.
 
 ### Security
 
