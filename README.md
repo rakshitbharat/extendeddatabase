@@ -18,13 +18,19 @@ composer require rakshitbharat/extendeddatabase
 ## Usage
 
 ``` php
-class User extends Illuminate\Database\Eloquent\Model {}
-
 echo User::select('*')->where('name','Rakshit')->toCompleteSql();
-
+```
 Output 
 select * from `users` where `name` = Rakshit
+
+
+``` php
+echo User::select('*')->where('name','Rakshit')->paginateToDatatable();
 ```
+Excepted output will be more advance pagination options.
+For more information to pass parameters to this object with Request object read below.
+https://datatables.net/manual/server-side
+
 
 ### Changelog
 
@@ -37,10 +43,3 @@ Please see [CONTRIBUTING](CONTRIBUTING.md) for details.
 ### Security
 
 If you discover any security related issues, please email rakshitbharatproject@gmail.com instead of using the issue tracker.
-
-## Credits
-
-- [Rakshit Patel](https://github.com/rakshitbharat)
-- [All Contributors](../../contributors)
-
-## License
