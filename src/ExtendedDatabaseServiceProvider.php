@@ -26,7 +26,7 @@ class ExtendedDatabaseServiceProvider extends ServiceProvider
             }
         });
 
-        \Illuminate\Database\Eloquent\Builder::macro("paginateWoDatatable", function () {
+        \Illuminate\Database\Eloquent\Builder::macro("paginateToDatatable", function () {
             return app('datatables')->eloquent($this)->toJson();
         });
     }
