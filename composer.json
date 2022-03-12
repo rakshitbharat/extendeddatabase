@@ -20,7 +20,6 @@
         }
     ],
     "require": {
-        "php": "^7",
         "yajra/laravel-datatables-oracle": "~9.0",
         "rakshitbharat/cleanify": "^1",
         "rakshitbharat/pythoninphp": "^1",
